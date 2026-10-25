@@ -1,0 +1,57 @@
+#panel { position: fixed; inset: 0; margin: auto; width: min(86rem, 96vw); height: min(86rem, 96vh); display: flex; flex-direction: column; padding: 2.4rem; gap: 1.6rem; transition: opacity 0.15s; }
+#panel.peek { opacity: 0.06; pointer-events: none; }
+#panel.peek .top { pointer-events: auto; }
+.top { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 1.4rem; }
+.brand .tc-title { font-size: 2.2rem; letter-spacing: 0.2rem; }
+.brand .tc-label { font-size: 1.2rem; letter-spacing: 0.3rem; }
+
+.tabs { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.tabs .tc-pill { height: 3.4rem; font-size: 1.4rem; cursor: pointer; }
+
+.view { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; padding-inline-end: 0.4rem; }
+.row { display: flex; align-items: center; gap: 1rem; }
+.row.wrap { flex-wrap: wrap; }
+.grow { flex: 1; min-width: 0; }
+
+.btn { height: 4rem; padding: 0 1.6rem; font-size: 1.5rem; border-radius: 0.9rem; }
+.btn.sm { height: 3.2rem; padding: 0 1.1rem; font-size: 1.3rem; }
+
+.item { display: flex; align-items: center; gap: 1.2rem; padding: 1rem 1.2rem; }
+.item .tc-tile { width: 4.4rem; height: 4.4rem; font-size: 1.8rem; }
+.item .meta { flex: 1; min-width: 0; }
+.item .tc-name { font-size: 1.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item .tc-sub { font-size: 1.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item .acts { display: flex; gap: 0.5rem; align-items: center; }
+.ibtn { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 0.8rem; font-size: 1.4rem; color: var(--accent-txt); background: rgba(10, 29, 46, 0.85); border: 1px solid rgba(92, 170, 220, 0.38); }
+.ibtn:hover { background: rgba(28, 60, 88, 0.85); }
+.ibtn.bad { color: #ff8da1; border-color: rgba(255, 110, 135, 0.45); }
+.ibtn.bad.armed { background: rgba(120, 30, 50, 0.9); }
+.item.off { opacity: 0.55; }
+
+.empty { text-align: center; padding: 4rem 1rem; color: var(--sub); font-size: 1.5rem; }
+
+.form { display: flex; flex-direction: column; gap: 1.1rem; }
+.fld { display: flex; flex-direction: column; gap: 0.5rem; }
+.fld .tc-flabel { font-size: 1.1rem; letter-spacing: 0.25rem; }
+.form .tc-input { height: 4rem; font-size: 1.5rem; padding: 0 1.2rem; }
+.seg { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.seg .tc-pill { height: 3.2rem; font-size: 1.3rem; padding: 0 1.2rem; cursor: pointer; }
+.sl { display: grid; grid-template-columns: 7rem 1fr 8rem; align-items: center; gap: 1rem; }
+.sl .tc-sub { font-size: 1.25rem; }
+.sl .tc-input { height: 3.2rem; font-size: 1.3rem; text-align: center; padding: 0 0.4rem; }
+.tg { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.tg .tc-sub { font-size: 1.35rem; }
+.box { padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.pos { font-family: var(--display); font-size: 1.15rem; color: var(--sub); direction: ltr; text-align: start; }
+.note { font-size: 1.2rem; color: var(--sub); line-height: 1.5; }
+.err { color: var(--bad); font-size: 1.3rem; }
+
+.help p { margin: 0 0 0.8rem; font-size: 1.4rem; line-height: 1.6; color: var(--sub); }
+.help b { color: var(--text); }
+.help kbd { font-family: var(--display); font-size: 1.1rem; padding: 0.15rem 0.6rem; border-radius: 0.5rem; background: rgba(76, 196, 245, 0.18); color: var(--accent-txt); }
+
+.hint { z-index: 10; pointer-events: none; }
+.sqlbox { flex: 1; min-height: 30rem; width: 100%; resize: none; padding: 1.2rem; border-radius: 1rem; font: 500 1.15rem/1.5 Consolas, monospace; color: var(--text); background: rgba(4, 14, 25, 0.82); border: 1px solid var(--edge); direction: ltr; text-align: left; user-select: text; white-space: pre; overflow: auto; }
+.hint { position: fixed; bottom: 6rem; left: 50%; transform: translateX(-50%); padding: 1.4rem 2.4rem; font-size: 1.5rem; line-height: 1.9; text-align: center; max-width: 80rem; }
+.hint kbd { font-family: var(--display); font-size: 1.2rem; padding: 0.2rem 0.8rem; border-radius: 0.6rem; background: rgba(76, 196, 245, 0.2); color: var(--accent-txt); margin-inline: 0.3rem; }

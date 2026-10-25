@@ -1,0 +1,110 @@
+/* ==========================================================================
+   TRICK CITY UI KIT  ·  shared design tokens + components
+   1rem = 10px at 1080p (scales with the screen height)
+   ========================================================================== */
+@font-face { font-family: "Orbitron"; font-weight: 600; src: url("fonts/orbitron-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Orbitron"; font-weight: 700; src: url("fonts/orbitron-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Orbitron"; font-weight: 800; src: url("fonts/orbitron-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Rajdhani"; font-weight: 500; src: url("fonts/rajdhani-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2013-2022; }
+@font-face { font-family: "Rajdhani"; font-weight: 600; src: url("fonts/rajdhani-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2013-2022; }
+@font-face { font-family: "Rajdhani"; font-weight: 700; src: url("fonts/rajdhani-latin-700-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2013-2022; }
+@font-face { font-family: "Tajawal"; font-weight: 500; src: url("fonts/tajawal-arabic-500-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "Tajawal"; font-weight: 700; src: url("fonts/tajawal-arabic-700-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+
+:root {
+    --accent: #4cc4f5;
+    --accent-2: #b6ecff;
+    --accent-txt: #8fdcff;
+    --ink: #052036;
+    --text: #f1f8fc;
+    --sub: #9db4c4;
+    --label: #5ac8f5;
+    --panel: linear-gradient(180deg, rgba(17, 41, 63, 0.84), rgba(8, 23, 38, 0.9));
+    --card: rgba(13, 33, 52, 0.82);
+    --card-hi: rgba(29, 63, 92, 0.72);
+    --edge: rgba(92, 170, 220, 0.26);
+    --edge-hi: rgba(140, 220, 255, 0.85);
+    --good: #4fe0bd;
+    --warn: #f2c14e;
+    --bad: #ff6b88;
+    --display: "Orbitron", "Rajdhani", "Tajawal", sans-serif;
+    --font: "Rajdhani", "Tajawal", sans-serif;
+}
+
+html { font-size: calc(100vh / 108); }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; font-family: var(--font); color: var(--text); user-select: none; -webkit-font-smoothing: antialiased; }
+button { all: unset; cursor: pointer; box-sizing: border-box; }
+input, select, textarea { font: inherit; }
+.hidden { display: none !important; }
+::-webkit-scrollbar { width: 0.5rem; height: 0.5rem; }
+::-webkit-scrollbar-thumb { background: rgba(92, 170, 220, 0.3); border-radius: 1rem; }
+
+/* ---------------- panels ---------------- */
+.tc-panel { position: relative; border-radius: 1.6rem; background: var(--panel); border: 1px solid var(--edge); box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+.tc-card { position: relative; border-radius: 1.4rem; background: var(--card); border: 1px solid var(--edge); transition: border-color 0.15s, background 0.15s, box-shadow 0.15s; }
+.tc-card.on { border-color: var(--edge-hi); background: linear-gradient(180deg, rgba(36, 76, 108, 0.72), rgba(20, 48, 74, 0.72)); box-shadow: 0 0 2rem rgba(76, 196, 245, 0.22), inset 0 0 0 1px rgba(140, 220, 255, 0.25); }
+
+/* ---------------- type ---------------- */
+.tc-title { font-family: var(--display); font-weight: 700; font-size: 2.6rem; letter-spacing: 0.32rem; text-transform: uppercase; color: var(--text); }
+.tc-label { font-family: var(--display); font-weight: 600; font-size: 1.45rem; letter-spacing: 0.42rem; text-transform: uppercase; color: var(--label); }
+.tc-flabel { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: 0.38rem; text-transform: uppercase; color: #b9d3e3; }
+.tc-num { font-family: var(--display); font-weight: 700; letter-spacing: 0.1rem; }
+.tc-name { font-weight: 700; font-size: 2rem; color: var(--text); }
+.tc-sub { font-weight: 600; font-size: 1.45rem; color: var(--sub); }
+
+/* ---------------- pills / chips ---------------- */
+.tc-pill { display: inline-flex; align-items: center; gap: 0.7rem; height: 3.6rem; padding: 0 1.5rem; border-radius: 99px; font-weight: 700; font-size: 1.5rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--accent-txt); border: 1.5px solid rgba(90, 200, 250, 0.42); background: rgba(10, 30, 48, 0.55); transition: 0.15s; }
+.tc-pill:hover { background: rgba(76, 196, 245, 0.12); }
+.tc-pill.on { color: var(--ink); background: var(--accent); border-color: var(--accent); box-shadow: 0 0 1.6rem rgba(76, 196, 245, 0.35); }
+.tc-chip { display: inline-flex; align-items: center; gap: 0.6rem; height: 2.6rem; padding: 0 1rem; border-radius: 99px; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.12rem; text-transform: uppercase; border: 1.5px solid currentColor; }
+.tc-chip.good { color: var(--good); background: rgba(79, 224, 189, 0.1); }
+.tc-chip.warn { color: var(--warn); background: rgba(242, 193, 78, 0.1); }
+.tc-chip.bad { color: var(--bad); background: rgba(255, 107, 136, 0.1); }
+.tc-chip.info { color: var(--accent-txt); background: rgba(76, 196, 245, 0.08); border-color: rgba(90, 200, 250, 0.42); }
+
+/* ---------------- buttons ---------------- */
+.tc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; height: 5.6rem; padding: 0 2.4rem; border-radius: 1.1rem; font-weight: 700; font-size: 1.85rem; letter-spacing: 0.3rem; text-transform: uppercase; transition: filter 0.15s, transform 0.1s, background 0.15s; }
+.tc-btn:active { transform: translateY(1px); }
+.tc-btn.primary { color: var(--ink); background: linear-gradient(90deg, #bdeeff, #4cc4f5); box-shadow: 0 0 2.6rem rgba(76, 196, 245, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.tc-btn.primary:hover { filter: brightness(1.07); }
+.tc-btn.ghost { color: var(--accent-txt); background: rgba(10, 29, 46, 0.85); border: 1px solid rgba(92, 170, 220, 0.38); }
+.tc-btn.ghost:hover { background: rgba(28, 60, 88, 0.85); }
+.tc-btn.danger { color: #ff8da1; background: rgba(58, 22, 36, 0.72); border: 1px solid rgba(255, 110, 135, 0.45); }
+.tc-btn.danger:hover { background: rgba(90, 28, 46, 0.8); }
+.tc-btn.icon { width: 7rem; padding: 0; }
+.tc-btn[disabled], .tc-btn.off { opacity: 0.45; pointer-events: none; }
+
+/* ---------------- icon tile ---------------- */
+.tc-tile { display: grid; place-items: center; flex: none; width: 5.6rem; height: 5.6rem; border-radius: 1rem; font-size: 2.2rem; color: var(--accent-txt); background: linear-gradient(180deg, rgba(46, 96, 136, 0.45), rgba(24, 58, 88, 0.45)); border: 1px solid rgba(92, 170, 220, 0.28); }
+.tc-tile.fill { color: var(--ink); background: linear-gradient(180deg, #a9e6ff, #4cc4f5); border-color: transparent; box-shadow: 0 0 1.6rem rgba(76, 196, 245, 0.35); }
+
+/* ---------------- bars / sliders / toggles ---------------- */
+.tc-bar { position: relative; height: 0.7rem; border-radius: 99px; background: rgba(92, 170, 220, 0.16); overflow: hidden; }
+.tc-bar > i { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: linear-gradient(90deg, #2fa6e6, #4cc4f5); box-shadow: 0 0 1rem rgba(76, 196, 245, 0.55); transition: width 0.3s; }
+.tc-range { -webkit-appearance: none; appearance: none; width: 100%; height: 0.7rem; border-radius: 99px; outline: none; background: linear-gradient(90deg, #2fa6e6 var(--p, 50%), rgba(92, 170, 220, 0.18) var(--p, 50%)); }
+.tc-range::-webkit-slider-thumb { -webkit-appearance: none; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0.35rem rgba(76, 196, 245, 0.45), 0 0 1.4rem rgba(76, 196, 245, 0.8); cursor: pointer; }
+.tc-toggle { position: relative; flex: none; width: 4.8rem; height: 2.6rem; border-radius: 99px; background: rgba(92, 120, 140, 0.35); transition: 0.2s; cursor: pointer; }
+.tc-toggle::after { content: ""; position: absolute; top: 0.35rem; left: 0.4rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: #8aa0b0; transition: 0.2s; }
+.tc-toggle.on { background: linear-gradient(90deg, #2a7fae, #3aa7dc); box-shadow: inset 0 0 0 1px rgba(140, 220, 255, 0.5); }
+.tc-toggle.on::after { left: 2.5rem; background: #fff; }
+
+/* ---------------- inputs ---------------- */
+.tc-input { width: 100%; height: 5.2rem; padding: 0 1.8rem; border-radius: 1rem; font-weight: 600; font-size: 1.9rem; color: var(--text); background: rgba(4, 14, 25, 0.82); border: 1px solid rgba(92, 170, 220, 0.3); outline: none; user-select: text; transition: border-color 0.15s, box-shadow 0.15s; }
+.tc-input:focus { border-color: var(--edge-hi); box-shadow: 0 0 0 1px rgba(140, 220, 255, 0.4), 0 0 1.6rem rgba(76, 196, 245, 0.25); }
+select.tc-input { -webkit-appearance: none; appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e6f4fb' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.6rem center; background-size: 2rem; padding-right: 5rem; }
+select.tc-input option { background: #0b1d2e; }
+.tc-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+/* ---------------- key cap ---------------- */
+.tc-key { display: inline-grid; place-items: center; min-width: 3.4rem; height: 3.4rem; padding: 0 0.8rem; border-radius: 0.7rem; font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--ink); background: linear-gradient(180deg, #bdeeff, #4cc4f5); box-shadow: 0 0 1.2rem rgba(76, 196, 245, 0.35); }
+.tc-key.dim { color: #8aa0b0; background: rgba(120, 150, 170, 0.18); box-shadow: none; }
+
+/* ---------------- misc ---------------- */
+.tc-x { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; font-size: 2.2rem; color: #dbe9f1; border-radius: 0.8rem; }
+.tc-x:hover { background: rgba(255, 255, 255, 0.08); }
+.tc-diamond { display: grid; place-items: center; width: 4.6rem; height: 4.6rem; border-radius: 1.1rem; transform: rotate(45deg); background: linear-gradient(145deg, #bdeeff, #3fb8ec); box-shadow: 0 0 2rem rgba(76, 196, 245, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.7); }
+.tc-diamond b { transform: rotate(-45deg); font-family: var(--display); font-weight: 800; font-size: 1.5rem; color: var(--ink); }
+html[dir="rtl"] .tc-dir { direction: rtl; }
+@keyframes tc-in { from { opacity: 0; transform: translateY(1.2rem); } }
+.tc-anim { animation: tc-in 0.28s cubic-bezier(0.2, 0.9, 0.3, 1) both; }
