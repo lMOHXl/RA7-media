@@ -82,17 +82,17 @@ RA7-MEDIA
 
 ⚙️ التركيب
 
-1) حط المجلد ra7-media في الـ resources.
+1️⃣ حط المجلد ra7-media في الـ resources.
 
-2) أضف ensure ra7-media في الـ server.cfg.
+2️⃣ أضف ensure ra7-media في الـ server.cfg.
 
-3) المتطلبات: qb-core و oxmysql و qb-target.
+3️⃣ المتطلبات: qb-core و oxmysql و qb-target.
 
-4) الجدول يتنشأ تلقائياً.
+4️⃣ الجدول يتنشأ تلقائياً.
 
-5) اكتب /media للإدارة.
+5️⃣ اكتب /media للإدارة.
 
-By RA7 DEV
+
 By RA7 DEV.
 
 RA7-MEDIA (English)
